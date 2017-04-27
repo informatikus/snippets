@@ -1,7 +1,8 @@
 #!/bin/bash
-echo "scanme.nmap.org 80
-scanme.nmap.org 81
-192.168.0.100 1" | (
+
+## mainly useful in situations where you dont have access to a nmap installation
+
+cat hosts | (
   TCP_TIMEOUT=3
   while read host port; do
     (CURPID=$BASHPID;
